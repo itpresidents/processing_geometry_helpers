@@ -13,10 +13,8 @@ void setup() {
   control1Y = height/3;
   control2X = width/2;
   control2Y = height/3;
-  
+
   factor = 1;
-  
-  
 }
 
 void draw() {
@@ -33,24 +31,25 @@ void draw() {
   control1Y += sin(t*.33)*factor*.2;
   control2X += cos(t*2)*factor*.2;
   control2Y += sin(t*.33)*factor*.5;
-  
+
+  noFill();
+  stroke(0);
+  strokeWeight(50);
+  bezier(anchor1X, anchor1Y, control1X, control1Y, control2X, control2Y, anchor2X, anchor2Y);
+
   noStroke();
-  fill(255, 0,0);
+  fill(255, 0, 0);
   ellipse(anchor1X, anchor1Y, 10, 10);
   ellipse(anchor2X, anchor2Y, 10, 10);
 
   fill(0, 0, 255);
   ellipse(control1X, control1Y, 10, 10);
   ellipse(control2X, control2Y, 10, 10);
-  
+
   stroke(200);
+  strokeWeight(1);
   line(anchor1X, anchor1Y, control1X, control1Y);
   line(anchor2X, anchor2Y, control2X, control2Y);
-  
-  noFill();
-  stroke(0);
-  bezier(anchor1X, anchor1Y, control1X, control1Y, control2X, control2Y, anchor2X, anchor2Y);
-  
-  
-  
+
 }
+
