@@ -1,0 +1,67 @@
+/*
+* Comparing constant motion to organic variable motion using 
+* sin and cos wave values
+*/
+
+float constantX, constantY, constantXSpeed;
+float sinX, sinY, sinXDir, sinT;
+float cosX, cosY, cosXDir, cosT;
+float tanX, tanY, tanXDir, tanT;
+
+void setup() {
+  size(640, 500); 
+
+  constantX = 0;
+  constantY = 100;
+  constantXSpeed = 5;
+
+  sinX = 0;
+  sinY = 250;
+  sinXDir = 1;
+  sinT = 0;
+
+  cosX = 0;
+  cosY = 400;
+  cosXDir = 1;
+  cosT = 0;
+}
+
+void draw() {
+  background(0); 
+
+  /////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////CONSTANT MOTION/////////////////////////////////////////// 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+
+  if (constantX < 0 || constantX > width) 
+    constantXSpeed *= -1;
+
+  // With constant Motion, you are moving the ball the same amount with each frame
+  constantX += constantXSpeed;
+  ellipse(constantX, constantY, 50, 50); 
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////SINE MOTION/////////////////////////////////////////////       
+  ///////////////////////////////////////////////////////////////////////////////////////////
+
+  if (sinX < 0 || sinX > width) 
+    sinXDir *= -1; 
+
+  sinT += 0.01;
+  sinX += 5 * (sin(sinT) + 2) * sinXDir;
+  ellipse(sinX, sinY, 50, 50);
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////COSINE MOTION///////////////////////////////////////////       
+  ///////////////////////////////////////////////////////////////////////////////////////////
+
+  if (cosX < 0 || cosX > width) 
+    cosXDir *= -1; 
+
+  cosT += 0.01;
+  cosX += 5 * (cos(cosT) + 2) * cosXDir;
+  ellipse(cosX, cosY, 50, 50);
+}
+
