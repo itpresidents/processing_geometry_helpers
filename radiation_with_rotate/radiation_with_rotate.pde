@@ -20,7 +20,6 @@ void draw() {
   background(0);
   stroke(255);
   a--;
-  pushMatrix();
   translate(centerX, centerY);
   rotate(a);
   for (int i = 0; i < numRays; i++) {
@@ -29,6 +28,5 @@ void draw() {
     rotate(TWO_PI/numRays);
     line(0, 0, centerX, centerY - height);
   }
-  popMatrix();
 }
 
