@@ -15,7 +15,7 @@ Examples that cover basic math and geometry concepts including:
 * Lots of great examples of using polar coordinates to create complex polygons and interactive bezier curves
 * https://github.com/runemadsen/printing-code-2012/tree/master/class_code/form
 
-## Chris Kairala's Polar Coordinate examples:
+## Chris Kairalla's Polar Coordinate examples:
 Polar Coordinate system example:
 The polar coordinates (radius, angle) are another way to define a point in space.  Processing uses cartesian (x,y) coordinates for drawing so we will need to convert from polar to cartesian if we want to draw the object to the screen.  These examples will show how to find the angle and radius between 2 points, and then convert it to x,y for drawing.
 http://itp.nyu.edu/~ck987/fxf/simple_polar/
