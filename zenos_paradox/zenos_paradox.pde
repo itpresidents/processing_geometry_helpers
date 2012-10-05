@@ -13,7 +13,7 @@ void draw() {
   background(0);  
   ellipse(x, y, sz, sz);
   //Every frame move 1/100th of the distance between where you are and the right-end of the screen
-  float speed = (width - x)/100;
+  float speed = (width - x)*.01;
   x += speed;
   println(speed);
 }
