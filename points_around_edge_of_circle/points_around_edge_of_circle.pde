@@ -50,7 +50,7 @@ void draw() {
  // radians() turns degrees into radians (PI)
  // sin() gives you the x-location of the point on the edge of the circle
  // radius tells you how far away from the center of the circle the point is
- yLoc = centerY + (radius * sin(radians(degree)));
+ yLoc = centerY + 2*(radius * sin(radians(degree)));
  
  // Draw a small circle moving around the edge of the circle
  fill(255,0,0);

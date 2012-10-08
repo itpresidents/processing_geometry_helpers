@@ -26,7 +26,7 @@ void draw() {
     //Evenly divide the circle by the number of rays you want
     //And rotate by the resulting angle
     rotate(TWO_PI/numRays);
-    line(0, 0, centerX, centerY - height);
+    line(0, 0, 100, 0);
   }
 }
 

@@ -14,7 +14,7 @@ float rStart;
 void setup() {
  size(600, 600); 
  rStart = 0; 
- numRays = 500;
+ numRays = 100;
  radius = 600;
  centerX = width/2;
  centerY = height/2;
@@ -25,8 +25,8 @@ void draw() {
  stroke(255);
  
  //Loop through all the angles for each sun ray
- //Where the "angle" is 360 degrees divided by the number of rays
- for (float r = rStart; r < (TWO_PI + rStart); r+=TWO_PI/numRays) {
+ //Where the "angle" is TWO_PI divided by the number of rays
+ for (float r = 0; r < TWO_PI; r+=TWO_PI/numRays) {
   //Calculate x and y-positions of the end of each ray
   //by multiplying the radius of the sun with cos and sin of the angle
   float xPos =  centerX + radius*cos(r);
@@ -34,8 +34,5 @@ void draw() {
   line(centerX, centerY, xPos, yPos); 
  }
  
- if(rStart >= TWO_PI)
-   rStart = 0;
- // Move the starting angle of the first ray to "animate" the rays
- rStart+=TWO_PI/(100*numRays);
+ 
 }
